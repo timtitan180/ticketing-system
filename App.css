@@ -1,0 +1,35 @@
+body {
+  background-color: #ccc;
+}
+
+textarea {
+  border-radius: 4%;
+}
+
+.ticketing-system {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.ticket-form {
+  margin-bottom: 20px;
+}
+
+.ticket {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+button {
+  margin-top: 10px;
+}
+
+
+.ticketing-system {
+  height: ;
+  width: ;
+}
