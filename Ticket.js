@@ -49,41 +49,35 @@ function TicketingSystem() {
     return (
         // <div className="ticket-form">
         // <h2>Create New Ticket</h2>
-        <Form>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Title</Form.Label>
-        <Form.Control type="text" placeholder="" value={newTicket.title}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Description</Form.Label>
-        <Form.Control as="textarea" rows={3} value={newTicket.description}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Status</Form.Label>
-        <Form.Select aria-label="Default select example" value={newTicket.status} onChange={handleChange}>
-        <option value="open">Open</option>
-        <option value="In Progress">In Progress</option>
-        <option value="Closed">Closed</option>
-    </Form.Select>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Priority</Form.Label>
-        <Form.Select aria-label="Default select example" value={newTicket.priority} onChange={handleChange}>
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-    </Form.Select>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Assignee</Form.Label>
-        <Form.Select aria-label="Default select example" value={newTicket.assignee} onChange={handleChange}>
-        <option value="John Smith">John Smith</option>
-        <option value="Ryan Williams">Ryan Williams</option>
-        <option value="Daniel Guetto">Daniel Guetto</option>
-        </Form.Select>
-      </Form.Group> 
-      <button onClick={addTicket}>Create Ticket</button>
-    </Form>
+        <div className="ticketing-system">
+      <h1>Ticketing System</h1>
+      <div className="ticket-form">
+        <h2>Create New Ticket</h2>
+        <label>Title: </label>
+        <input type="text" name="title" value={newTicket.title} onChange={handleInputChange} />
+        <label>Description: </label>
+        <textarea name="description" value={newTicket.description} onChange={handleInputChange} />
+        <label>Status: </label>
+        <select name="status" value={newTicket.status} onChange={handleInputChange}>
+          <option value="Open">Open</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Closed">Closed</option>
+        </select>
+        <label>Priority: </label>
+        <select name="priority" value={newTicket.priority} onChange={handleInputChange}>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <label>Assignee </label>
+        <select name="assignee" value={newTicket.assignee} onChange={handleInputChange}>
+          <option value=" "></option>
+          <option value="John Smith">John Smith</option>
+          <option value="Ryan Williams">Ryan Williams</option>
+          <option value="Daniel Gonzales">Daniel Gonzales</option>
+        </select>
+        <button onClick={addTicket}>Create Ticket</button>
+      </div>
       <div className="ticket-list">
         <h2>Current Tickets</h2>
         {tickets.map(ticket => (
@@ -94,10 +88,13 @@ function TicketingSystem() {
             <p>Priority: {ticket.priority}</p>
             <button onClick={() => deleteTicket(ticket.id)}>Delete</button>
           </div>
-          </div>
         ))}
-        
+      </div>
+    </div>
 
+)
+        
+}
 
 
 
